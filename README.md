@@ -1,6 +1,4 @@
-# Vulnerable Demo App 🔓
-
-> ⚠️ **WARNING**: This application is intentionally vulnerable for educational purposes. DO NOT deploy to production or use in any real environment.
+# Demo App 🔓
 
 ## Purpose
 
