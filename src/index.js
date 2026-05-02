@@ -100,8 +100,12 @@ app.get('/template', (req, res) => {
 // VULNERABILITY 10: Insecure Deserialization
 app.post('/data', (req, res) => {
     const serialized = req.body.data;
-    const obj = eval('(' + serialized + ')');
-    res.json(obj);
+    try {
+        const obj = JSON.parse(serialized);
+        res.json(obj);
+    } catch (err) {
+        res.status(400).json({ error: 'Invalid JSON input' });
+    }
 });
 
 // VULNERABILITY 11: Open Redirect
